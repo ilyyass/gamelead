@@ -1,40 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GameLead - Call of Duty Guide</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warzone 2.0 Mobile Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --dark-gray: #2c2c2c;
+            --neon-green: #00ff00;
+            --text-color: #ffffff;
+            --border-style: 2px solid var(--neon-green);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        /* Utility for rough paint-stroke borders */
+        .paint-stroke-border {
+            position: relative;
+            padding: 10px; /* Adjust padding as needed */
+        }
+
+        .paint-stroke-border::before,
+        .paint-stroke-border::after {
+            content: '';
+            position: absolute;
+            background-color: var(--neon-green);
+            opacity: 0.7; /* Make it slightly transparent for a rougher look */
+            z-index: -1;
+        }
+
+        .paint-stroke-border::before {
+            top: 0;
+            left: -5px;
+            width: 105%; /* Extend slightly beyond content */
+            height: 3px; /* Top border */
+            transform: skewX(-15deg);
+        }
+
+        .paint-stroke-border::after {
+            bottom: 0;
+            right: -5px;
+            width: 105%;
+            height: 3px; /* Bottom border */
+            transform: skewX(15deg);
+        }
+
+        .header {
+            background-color: var(--dark-gray);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: var(--border-style);
+        }
+
+        .header h1 {
+            font-family: 'Oswald', sans-serif; /* Call of Duty style */
+            font-size: 2.5em;
+            color: var(--text-color);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header h1::before {
+            content: 'CALL OF';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.4em;
+            color: var(--neon-green);
+            letter-spacing: 4px;
+        }
+        .header h1 span {
+            color: var(--neon-green);
+        }
+
+        .navbar {
+            background-color: var(--dark-gray);
+            padding: 10px 0;
+            border-bottom: var(--border-style);
+            text-align: center;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8em;
+            padding: 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--neon-green);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif; /* Futuristic font */
+            font-size: 1.8em;
+            text-align: center;
+            margin: 40px 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--neon-green);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--neon-green);
+            margin: 10px auto 0;
+            transform: skewX(-20deg);
+        }
+
+
+        .news-card {
+            background-color: var(--dark-gray);
+            border: var(--border-style);
+            border-image: linear-gradient(to right, var(--neon-green), transparent) 1; /* Gradient border for a rough look */
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            position: relative;
+            overflow: hidden; /* Ensure pseudo-elements stay within */
+        }
+
+        .news-card::before, .news-card::after {
+            content: '';
+            position: absolute;
+            background: var(--neon-green);
+            opacity: 0.6;
+        }
+
+        .news-card::before { /* Top left diagonal */
+            top: -10px;
+            left: -10px;
+            width: 30px;
+            height: 3px;
+            transform: rotate(-45deg);
+        }
+        .news-card::after { /* Bottom right diagonal */
+            bottom: -10px;
+            right: -10px;
+            width: 30px;
+            height: 3px;
+            transform: rotate(135deg);
+        }
+
+
+        .news-card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .news-card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .see-more-btn {
+            display: inline-block;
+            background-color: var(--neon-green);
+            color: var(--dark-bg);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .see-more-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .see-more-btn:hover::before {
+            left: 100%;
+        }
+
+        .see-more-btn:hover {
+            background-color: darken(var(--neon-green), 10%);
+            color: var(--text-color);
+        }
+
+        .text-block {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            text-align: center;
+            margin: 50px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--neon-green);
+            padding: 15px;
+            border: var(--border-style);
+            position: relative;
+            background-color: rgba(0, 255, 0, 0.05); /* Slight neon glow background */
+            display: block; /* Make the whole block clickable */
+            text-decoration: none; /* Remove underline for links */
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            .header h1 {
+                font-size: 3em;
+            }
+            .navbar a {
+                font-size: 1em;
+            }
+            .section-title {
+                font-size: 2.2em;
+            }
+            .news-card {
+                max-width: 400px;
+            }
+            .text-block {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1 class="logo">GAMELEAD</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#privacy">Privacy Policy</a>
-      <a href="mailto:hello@gamelead.online">Contact</a>
-    </nav>
-  </header>
+    <div class="container">
+        <header class="header">
+            <h1><span>WARZONE</span> 2.0</h1>
+        </header>
 
-  <main>
-    <section class="hero">
-      <h2>Exclusive Call of Duty Guide</h2>
-      <p>Unlock strategies, tips, and tricks for Modern Warfare & Warzone 2.0.</p>
-      <a href="https://content-unlock.com/?22eb73a" class="cta-btn">Get Your Free Guide</a>
-    </section>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Privacy Policy</a>
+            <a href="mailto:hello@gamelead.online">Contact</a>
+        </nav>
 
-    <section class="preview">
-      <h3>Preview Document</h3>
-      <iframe src="https://www.mediafire.com/file/v5wke8r95jjpwzt/MediaFire_-_Getting_Started.pdf/file" frameborder="0"></iframe>
-    </section>
-  </main>
+        <section class="news-section">
+            <h2 class="section-title">NEWS</h2>
+            <div class="news-card paint-stroke-border">
+                <img src="https://i.pinimg.com/originals/57/b1/f7/57b1f746879ac3d9038b24fe2b00c1f2.jpg" alt="Soldier in action - Exclusive Call of Duty Guide">
+                <p>Exclusive Call of Duty Guide<br>Unlock strategies, tips, and tricks for Modern Warfare & Warzone 2.0.</p>
+                <a href="https://unlock-file.com/?22eb73a" class="see-more-btn">Get your guide now</a>
+            </div>
+        </section>
 
-  <footer id="privacy">
-    <p>© 2025 GameLead.online</p>
-    <p><a href="#">Home</a> | <a href="#privacy">Privacy Policy</a> | <a href="mailto:hello@gamelead.online">hello@gamelead.online</a></p>
-    <p>This site is not affiliated with or endorsed by Call of Duty.</p>
-  </footer>
+        <section class="info-block">
+            <a href="https://unlock-file.com/?22eb73a" class="text-block paint-stroke-border">
+                DISCOVER NOW
+            </a>
+        </section>
+
+        <section class="info-block">
+            <a href="https://unlock-file.com/?22eb73a" class="text-block paint-stroke-border">
+                LAUNCH DETAILS
+            </a>
+        </section>
+    </div>
 </body>
 </html>
