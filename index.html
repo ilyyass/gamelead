@@ -3,170 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download Baseball 9</title>
+  <title>GameLead - Your Hub for Fan Packs</title>
+  <link rel="icon" href="https://i.postimg.cc/3J1gFp2Q/logo-game-lead.jpg" type="image/jpeg">
   <style>
-    body {
+    /* General Styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background-color: #0d1117;
-      font-family: 'Segoe UI', sans-serif;
-      color: #ffffff;
       padding: 0;
     }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+    }
 
-    .header {
+    /* Hero Section Styles */
+    .hero {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #161b22;
-      padding: 15px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-
-    .header img {
-      height: 35px;
-      margin-right: 10px;
-    }
-
-    .header h1 {
-      font-size: 20px;
-      color: #3b82f6;
-      margin: 0;
-      font-weight: 600;
-    }
-
-    .container {
-      max-width: 420px;
-      width: 100%;
-      margin: 0 auto;
+      text-align: center;
+      height: 60vh;
+      background-image: linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 1)), url('https://i.postimg.cc/GtBj5pRY/Dream-Gaming-Room-Inspo.jpg');
+      background-size: cover;
+      background-position: center;
       padding: 20px;
     }
-
-    .card {
-      background-color: #161b22;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      overflow: hidden;
+    .hero img.logo {
+      width: 100px;
+      height: auto;
       margin-bottom: 20px;
     }
-
-    .card img {
-      width: 100%;
-      height: auto;
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.6);
     }
 
-    .card-content {
-      padding: 16px;
+    /* Main Content Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
-
-    .title {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    .rating {
-      color: #facc15;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-      margin-bottom: 16px;
-      color: #c9d1d9;
-    }
-
-    .tag {
-      background-color: #30363d;
-      padding: 5px 10px;
-      border-radius: 8px;
-    }
-
-    .description {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #c9d1d9;
-      margin-bottom: 16px;
-    }
-
-    .features {
-      margin-bottom: 16px;
-    }
-
-    .features li {
-      font-size: 14px;
-      margin-bottom: 6px;
-      color: #d1d5db;
-    }
-
-    .download-btn {
-      display: block;
-      width: 100%;
+    .container h2 {
       text-align: center;
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 30px;
+    }
+
+    /* Game Grid Styles */
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .game-card {
+      background-color: #161b22;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .game-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+    }
+    .game-card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .game-card-content {
+      padding: 20px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .game-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    .cta-btn {
+      display: inline-block;
       background: linear-gradient(to right, #0ea5e9, #3b82f6);
       color: #fff;
-      padding: 12px;
-      font-size: 16px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: 600;
       border: none;
       border-radius: 10px;
       text-decoration: none;
       transition: background 0.3s;
       margin-top: 10px;
     }
-
-    .download-btn:hover {
+    .cta-btn:hover {
       background: linear-gradient(to right, #0284c7, #2563eb);
     }
 
-    .screenshot {
-      margin-top: 20px;
-      border-radius: 12px;
-      overflow: hidden;
+    /* Footer Styles */
+    .footer {
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 40px;
+      border-top: 1px solid #30363d;
+      font-size: 14px;
+      color: #c9d1d9;
     }
-
-    .screenshot img {
-      width: 100%;
-      display: block;
+    .footer a {
+      color: #3b82f6;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Media query for smaller mobile screens */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Logo -->
-  <div class="header">
-    <img src="https://i.postimg.cc/P541p0yY/logo-game-lead.jpg" alt="Site Logo" />
-   <h1> GameLead </h1>
-  </div>
 
-  <div class="container">
-    <div class="card">
-      <img src="https://i.postimg.cc/QtqqbRNb/Fiverr-Find-the-best-global-talent.jpg" alt="Baseball 9" />
-      <div class="card-content">
-        <div class="title">Baseball 9</div>
-        <div class="rating">⭐ 4.8 (4.2k reviews)</div>
-        <div class="info">
-          <span class="tag">Sports</span>
-          <span>200 MB</span>
+  <header class="hero">
+    <img src="https://i.postimg.cc/3J1gFp2Q/logo-game-lead.jpg" alt="GameLead Logo" class="logo">
+    <h1>GAME LEAD</h1>
+  </header>
+
+  <main class="container">
+    <h2>Choose Your Fan Pack</h2>
+
+    <div class="game-grid">
+
+      <div class="game-card">
+        <img src="https://i.postimg.cc/8zDx1Jm0/fortnite.jpg" alt="Fortnite" class="game-card-image">
+        <div class="game-card-content">
+          <h3>Fortnite</h3>
+          <a href="#" class="cta-btn">Get Fan Pack</a>
         </div>
-        <div class="description">
-        🎮 Baseball 9!
-         
-		Get ready for a fast-paced and realistic baseball experience with Baseball 9,
-        </div>
-        <ul class="features">
- 
-        </ul>
-        <a href="https://pagelocked.org/cl/i/34onew" class="download-btn" target="_blank">Download Game</a>
       </div>
-    </div>
 
-    <div class="screenshot">
-      <img src="https://i.postimg.cc/X7rvcdQ7/Baseball-9-MOD-APK-Unlimited-Money.jpg" alt="Gameplay Screenshot">
-	 </div>
-    
-    <a href="https://pagelocked.org/cl/i/34onew" class="download-btn" target="_blank">Download Now</a>
-  </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/k47Lp2kR/minecraft.jpg" alt="Minecraft" class="game-card-image">
+        <div class="game-card-content">
+          <h3>Minecraft</h3>
+          <a href="#" class="cta-btn">Get Fan Pack</a>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://i.postimg.cc/NMyT4xT9/roblox.jpg" alt="Roblox" class="game-card-image">
+        <div class="game-card-content">
+          <h3>Roblox</h3>
+          <a href="#" class="cta-btn">Get Fan Pack</a>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://i.postimg.cc/W3hB7c7L/cod.jpg" alt="Call of Duty" class="game-card-image">
+        <div class="game-card-content">
+          <h3>Call of Duty</h3>
+          <a href="#" class="cta-btn">Get Fan Pack</a>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://i.postimg.cc/KY96JzT8/eafc.jpg" alt="EA Sports FC" class="game-card-image">
+        <div class="game-card-content">
+          <h3>EA Sports FC</h3>
+          <a href="#" class="cta-btn">Get Fan Pack</a>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://i.postimg.cc/c1SgXvTh/anime.jpg" alt="Anime" class="game-card-image">
+        <div class="game-card-content">
+          <h3>Anime</h3>
+          <a href="#" class="cta-btn">Get Fan Pack</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 GameLead. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
