@@ -75,32 +75,35 @@
       transform: translateY(-8px);
       box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
     }
-    .game-card-image {
-      width: 100%;
+    
+    /* === UPDATED STYLES FOR CARD IMAGE AREA === */
+    .game-card-image-container {
       height: 180px;
-      object-fit: cover;
-    }
-    .game-card-content {
       padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0d1117; /* Dark background for logos */
+    }
+    .game-card-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* Ensures logo is never cropped */
+    }
+    .game-card-image.cover {
+       width: 100%;
+       height: 100%;
+       object-fit: cover; /* Style for the Anime card image */
+    }
+
+    .game-card-content {
+      padding: 25px 20px;
       text-align: center;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center; /* Center items horizontally */
-    }
-    .game-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
-    
-    /* === NEW STYLE FOR GAME LOGOS === */
-    .game-card-logo {
-      height: 50px;
-      width: auto;
-      max-width: 80%;
-      margin-bottom: 15px;
-      object-fit: contain;
+      justify-content: center; /* Center the button vertically */
+      align-items: center; 
     }
 
     .cta-btn {
@@ -114,7 +117,6 @@
       border-radius: 10px;
       text-decoration: none;
       transition: background 0.3s;
-      margin-top: 10px;
     }
     .cta-btn:hover {
       background: linear-gradient(to right, #0284c7, #2563eb);
@@ -159,47 +161,54 @@
     <div class="game-grid">
 
       <div class="game-card">
-        <img src="https://i.postimg.cc/8zDx1Jm0/fortnite.jpg" alt="Fortnite" class="game-card-image">
+        <div class="game-card-image-container">
+            <img src="https://i.postimg.cc/tgB8728H/Fortnite.jpg" alt="Fortnite" class="game-card-image">
+        </div>
         <div class="game-card-content">
-          <img src="https://i.postimg.cc/tgB8728H/Fortnite.jpg" alt="Fortnite Logo" class="game-card-logo">
           <a href="#" class="cta-btn">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
-        <img src="https://i.postimg.cc/k47Lp2kR/minecraft.jpg" alt="Minecraft" class="game-card-image">
+        <div class="game-card-image-container">
+            <img src="https://i.postimg.cc/yNL2Wv2C/download-1.jpg" alt="Minecraft" class="game-card-image">
+        </div>
         <div class="game-card-content">
-          <img src="https://i.postimg.cc/yNL2Wv2C/download-1.jpg" alt="Minecraft Logo" class="game-card-logo">
           <a href="#" class="cta-btn">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
-        <img src="https://i.postimg.cc/NMyT4xT9/roblox.jpg" alt="Roblox" class="game-card-image">
+        <div class="game-card-image-container">
+            <img src="https://i.postimg.cc/rpVv8vZ8/Roblox-logo.jpg" alt="Roblox" class="game-card-image">
+        </div>
         <div class="game-card-content">
-          <img src="https://i.postimg.cc/rpVv8vZ8/Roblox-logo.jpg" alt="Roblox Logo" class="game-card-logo">
           <a href="#" class="cta-btn">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
-        <img src="https://i.postimg.cc/W3hB7c7L/cod.jpg" alt="Call of Duty" class="game-card-image">
+        <div class="game-card-image-container">
+            <img src="https://i.postimg.cc/ZqwX0V2X/d53392fe-0517-4561-95eb-d028096b2ede.jpg" alt="Call of Duty" class="game-card-image">
+        </div>
         <div class="game-card-content">
-          <img src="https://i.postimg.cc/ZqwX0V2X/d53392fe-0517-4561-95eb-d028096b2ede.jpg" alt="Call of Duty Logo" class="game-card-logo">
           <a href="#" class="cta-btn">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
-        <img src="https://i.postimg.cc/KY96JzT8/eafc.jpg" alt="EA Sports FC" class="game-card-image">
+        <div class="game-card-image-container">
+            <img src="https://i.postimg.cc/BvSdqd7J/18d8806e-1a8f-417c-912a-4ef01e66a626.jpg" alt="EA Sports FC" class="game-card-image">
+        </div>
         <div class="game-card-content">
-          <img src="https://i.postimg.cc/BvSdqd7J/18d8806e-1a8f-417c-912a-4ef01e66a626.jpg" alt="EA Sports FC Logo" class="game-card-logo">
           <a href="#" class="cta-btn">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
-        <img src="https://i.postimg.cc/c1SgXvTh/anime.jpg" alt="Anime" class="game-card-image">
+        <div class="game-card-image-container">
+            <img src="https://i.postimg.cc/c1SgXvTh/anime.jpg" alt="Anime" class="game-card-image cover">
+        </div>
         <div class="game-card-content">
           <h3>Anime</h3>
           <a href="#" class="cta-btn">Get Fan Pack</a>
