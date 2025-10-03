@@ -4,21 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GameLead - Your Hub for Fan Packs</title>
-  <link rel="icon" href="https://i.postimg.cc/3J1gFp2Q/logo-game-lead.jpg" type="image/jpeg">
+
+  <!-- ✅ Favicon links -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
   <style>
-    /* General Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #0d1117;
       color: #ffffff;
+      line-height: 1.6;
     }
 
-    /* Hero Section Styles */
+    /* Hero Section */
     .hero {
       display: flex;
       flex-direction: column;
@@ -31,188 +32,176 @@
       background-position: center;
       padding: 20px;
     }
-    .hero img.logo {
-      width: 100px;
-      height: auto;
-      margin-bottom: 20px;
-    }
+    .hero img.logo { width: 100px; margin-bottom: 20px; }
     .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-size: 3.5rem; font-weight: 700; letter-spacing: 2px;
       text-shadow: 0 4px 12px rgba(0,0,0,0.6);
     }
-
-    /* Main Content Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    .hero p {
+      margin-top: 15px; font-size: 1.2rem; color: #c9d1d9;
+      max-width: 600px;
     }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(to right, #0ea5e9, #3b82f6);
+      color: #fff; padding: 12px 25px;
+      font-size: 1rem; font-weight: 600;
+      border: none; border-radius: 10px;
+      text-decoration: none; margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .cta-btn:hover { background: linear-gradient(to right, #0284c7, #2563eb); }
+
+    /* Containers */
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
     .container h2 {
-      text-align: center;
-      font-size: 2rem;
-      color: #3b82f6;
-      margin-bottom: 30px;
+      text-align: center; font-size: 2rem; color: #3b82f6; margin-bottom: 30px;
     }
 
-    /* Game Grid Styles */
+    /* Game Grid */
     .game-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
     .game-card {
-      background-color: #161b22;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      background-color: #161b22; border-radius: 15px;
+      overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
     }
-    .game-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-    }
-    
+    .game-card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3); }
     .game-card-image-container {
-      height: 180px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #0d1117; /* Dark background for logos */
+      height: 180px; padding: 20px; display: flex;
+      align-items: center; justify-content: center;
+      background-color: #0d1117;
     }
-    .game-card-image {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* Ensures logo is never cropped */
-    }
+    .game-card-image { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .game-card-content { padding: 25px 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
-    .game-card-content {
-      padding: 25px 20px;
-      text-align: center;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Center the button vertically */
-      align-items: center; 
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background: linear-gradient(to right, #0ea5e9, #3b82f6);
-      color: #fff;
-      padding: 12px 25px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .cta-btn:hover {
-      background: linear-gradient(to right, #0284c7, #2563eb);
-    }
-
-    /* Footer Styles */
+    /* Footer */
     .footer {
-      text-align: center;
-      padding: 25px 20px;
-      margin-top: 40px;
-      border-top: 1px solid #30363d;
-      font-size: 14px;
-      color: #c9d1d9;
+      text-align: center; padding: 25px 20px; margin-top: 40px;
+      border-top: 1px solid #30363d; font-size: 14px; color: #c9d1d9;
     }
-    .footer a {
-      color: #3b82f6;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    .footer a:hover {
-      text-decoration: underline;
-    }
-    
-    /* Media query for smaller mobile screens */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    }
+    .footer a { color: #3b82f6; text-decoration: none; margin: 0 10px; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) { .hero h1 { font-size: 2.5rem; } }
   </style>
 </head>
 <body>
 
+  <!-- Hero -->
   <header class="hero">
     <img src="https://i.postimg.cc/3J1gFp2Q/logo-game-lead.jpg" alt="GameLead Logo" class="logo">
     <h1>GAME LEAD</h1>
+    <p>Download Free 4K Fan Packs: Avatars, Wallpapers, Logos & Scoreboards</p>
+    <a href="#packs" class="cta-btn">Explore Fan Packs</a>
   </header>
 
-  <main class="container">
+  <!-- Packs -->
+  <main class="container" id="packs">
     <h2>Choose Your Fan Pack</h2>
-
     <div class="game-grid">
-
+      
       <div class="game-card">
         <div class="game-card-image-container">
-            <img src="https://i.postimg.cc/tgB8728H/Fortnite.jpg" alt="Fortnite" class="game-card-image">
+          <img src="https://i.postimg.cc/tgB8728H/Fortnite.jpg" alt="Fortnite" class="game-card-image">
         </div>
         <div class="game-card-content">
-          <a href="#" class="cta-btn">Get Fan Pack</a>
+          <a href="https://lockverify.org/cl/i/4oqedx" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
         <div class="game-card-image-container">
-            <img src="https://i.postimg.cc/yNL2Wv2C/download-1.jpg" alt="Minecraft" class="game-card-image">
+          <img src="https://i.postimg.cc/yNL2Wv2C/download-1.jpg" alt="Minecraft" class="game-card-image">
         </div>
         <div class="game-card-content">
-          <a href="#" class="cta-btn">Get Fan Pack</a>
+          <a href="https://lockverify.org/cl/i/pq2gk3" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
         <div class="game-card-image-container">
-            <img src="https://i.postimg.cc/rpVv8vZ8/Roblox-logo.jpg" alt="Roblox" class="game-card-image">
+          <img src="https://i.postimg.cc/rpVv8vZ8/Roblox-logo.jpg" alt="Roblox" class="game-card-image">
         </div>
         <div class="game-card-content">
-          <a href="#" class="cta-btn">Get Fan Pack</a>
+          <a href="https://lockverify.org/cl/i/d2qrro" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
         <div class="game-card-image-container">
-            <img src="https://i.postimg.cc/ZqwX0V2X/d53392fe-0517-4561-95eb-d028096b2ede.jpg" alt="Call of Duty" class="game-card-image">
+          <img src="https://i.postimg.cc/ZqwX0V2X/d53392fe-0517-4561-95eb-d028096b2ede.jpg" alt="Call of Duty" class="game-card-image">
         </div>
         <div class="game-card-content">
-          <a href="#" class="cta-btn">Get Fan Pack</a>
+          <a href="https://lockverify.org/cl/i/l7qxx6" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
         <div class="game-card-image-container">
-            <img src="https://i.postimg.cc/BvSdqd7J/18d8806e-1a8f-417c-912a-4ef01e66a626.jpg" alt="EA Sports FC" class="game-card-image">
+          <img src="https://i.postimg.cc/BvSdqd7J/18d8806e-1a8f-417c-912a-4ef01e66a626.jpg" alt="EA Sports FC" class="game-card-image">
         </div>
         <div class="game-card-content">
-          <a href="#" class="cta-btn">Get Fan Pack</a>
+          <a href="https://lockverify.org/cl/i/7j7lg9" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
 
       <div class="game-card">
         <div class="game-card-image-container">
-            <img src="https://i.postimg.cc/zvwGssPJ/GTA-V.jpg" alt="GTA 5" class="game-card-image">
+          <img src="https://i.postimg.cc/zvwGssPJ/GTA-V.jpg" alt="GTA 5" class="game-card-image">
         </div>
         <div class="game-card-content">
-          <a href="#" class="cta-btn">Get Fan Pack</a>
+          <a href="https://lockverify.org/cl/i/34onew" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
 
     </div>
   </main>
 
+  <!-- About -->
+  <section class="container">
+    <h2>About GameLead</h2>
+    <p style="text-align:center;max-width:800px;margin:0 auto;color:#c9d1d9;">
+      GameLead is your hub for high-quality gamer content. We provide free fan packs 
+      for the most popular games – Fortnite, Minecraft, Roblox, Call of Duty, and more. 
+      Every pack includes 4K wallpapers, avatars, logos, and esports-inspired scoreboards, 
+      designed for both mobile and desktop.
+    </p>
+  </section>
+
+  <!-- How it Works -->
+  <section class="container">
+    <h2>How It Works</h2>
+    <ol style="max-width:600px;margin:0 auto;color:#c9d1d9;">
+      <li>Choose your favorite game fan pack</li>
+      <li>Click "Get Fan Pack"</li>
+      <li>Complete a quick verification</li>
+      <li>Download your 4K files instantly</li>
+    </ol>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container">
+    <h2>FAQ</h2>
+    <div style="max-width:800px;margin:0 auto;color:#c9d1d9;">
+      <p><strong>Is it free?</strong> Yes, all fan packs are free after verification.</p>
+      <p><strong>What formats are included?</strong> PNG/JPEG for wallpapers, transparent PNG for logos.</p>
+      <p><strong>Does it work on mobile and desktop?</strong> Yes, we provide both sizes (1080×1920 & 3840×2160).</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 GameLead. All rights reserved.</p>
+    <p>
+      <a href="#">About</a> | 
+      <a href="mailto:hello@gamelead.online">Contact</a> | 
+      <a href="#">Disclaimer</a>
+    </p>
   </footer>
 
 </body>
