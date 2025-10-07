@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GameLead - Your Hub for Fan Packs</title>
 
-  <!-- ✅ Favicon links -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
+  
   <style>
+    /* Reset and Base Styles */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
+      /* font-family: 'Segoe UI', sans-serif; /* Recommended: Use a common Google Font for better cross-platform consistency if available */
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; /* A robust system font stack */
+      background-color: #0d1117; /* Dark charcoal/black */
       color: #ffffff;
       line-height: 1.6;
     }
@@ -27,6 +28,7 @@
       justify-content: center;
       text-align: center;
       height: 60vh;
+      /* Using a linear gradient overlay to ensure text readability */
       background-image: linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 1)), url('https://i.postimg.cc/GtBj5pRY/Dream-Gaming-Room-Inspo.jpg');
       background-size: cover;
       background-position: center;
@@ -36,21 +38,27 @@
     .hero h1 {
       font-size: 3.5rem; font-weight: 700; letter-spacing: 2px;
       text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      /* Added margin-bottom for better spacing between title and paragraph */
+      margin-bottom: 15px; 
     }
     .hero p {
-      margin-top: 15px; font-size: 1.2rem; color: #c9d1d9;
+      /* Removed margin-top and rely on h1's margin-bottom */
+      font-size: 1.2rem; color: #c9d1d9;
       max-width: 600px;
     }
     .cta-btn {
       display: inline-block;
-      background: linear-gradient(to right, #0ea5e9, #3b82f6);
+      background: linear-gradient(to right, #0ea5e9, #3b82f6); /* Blue gradient */
       color: #fff; padding: 12px 25px;
       font-size: 1rem; font-weight: 600;
       border: none; border-radius: 10px;
-      text-decoration: none; margin-top: 20px;
-      transition: background 0.3s;
+      text-decoration: none; margin-top: 25px; /* Increased margin for spacing */
+      transition: background 0.3s ease-in-out;
     }
-    .cta-btn:hover { background: linear-gradient(to right, #0284c7, #2563eb); }
+    .cta-btn:hover { 
+      background: linear-gradient(to right, #0284c7, #2563eb); 
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5); /* Added subtle shadow on hover */
+    }
 
     /* Containers */
     .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
@@ -70,14 +78,40 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex; flex-direction: column;
     }
-    .game-card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3); }
+    .game-card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4); }
     .game-card-image-container {
       height: 180px; padding: 20px; display: flex;
       align-items: center; justify-content: center;
       background-color: #0d1117;
     }
     .game-card-image { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .game-card-content { padding: 25px 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .game-card-content { 
+      padding: 25px 20px; text-align: center; flex-grow: 1; 
+      display: flex; flex-direction: column; 
+      justify-content: center; align-items: center; 
+      /* Added a title for the game card */
+      min-height: 80px; /* Ensure content area has a minimum height */
+    }
+    .game-card-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Additional Sections Styling */
+    /* Applied explicit list styling for "How It Works" for clarity */
+    .container ol {
+        list-style-position: inside;
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+    .container ol li {
+        margin-bottom: 10px;
+    }
+    .container p { margin-bottom: 10px; }
+
 
     /* Footer */
     .footer {
@@ -92,7 +126,6 @@
 </head>
 <body>
 
-  <!-- Hero -->
   <header class="hero">
     <img src="https://i.postimg.cc/3J1gFp2Q/logo-game-lead.jpg" alt="GameLead Logo" class="logo">
     <h1>GAME LEAD</h1>
@@ -100,7 +133,6 @@
     <a href="#packs" class="cta-btn">Explore Fan Packs</a>
   </header>
 
-  <!-- Packs -->
   <main class="container" id="packs">
     <h2>Choose Your Fan Pack</h2>
     <div class="game-grid">
@@ -110,7 +142,8 @@
           <img src="https://i.postimg.cc/tgB8728H/Fortnite.jpg" alt="Fortnite" class="game-card-image">
         </div>
         <div class="game-card-content">
-          <a href=https://gamelead.online/cl/i/4oqedx" class="cta-btn" target="_blank">Get Fan Pack</a>
+          <h3>FORTNITE</h3>
+          <a href="https://gamelead.online/cl/i/4oqedx" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
 
@@ -119,6 +152,7 @@
           <img src="https://i.postimg.cc/yNL2Wv2C/download-1.jpg" alt="Minecraft" class="game-card-image">
         </div>
         <div class="game-card-content">
+          <h3>MINECRAFT</h3>
           <a href="https://gamelead.online/cl/i/pq2gk3" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
@@ -128,6 +162,7 @@
           <img src="https://i.postimg.cc/rpVv8vZ8/Roblox-logo.jpg" alt="Roblox" class="game-card-image">
         </div>
         <div class="game-card-content">
+          <h3>ROBLOX</h3>
           <a href="https://gamelead.online/cl/i/d2qrro" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
@@ -137,6 +172,7 @@
           <img src="https://i.postimg.cc/ZqwX0V2X/d53392fe-0517-4561-95eb-d028096b2ede.jpg" alt="Call of Duty" class="game-card-image">
         </div>
         <div class="game-card-content">
+          <h3>CALL OF DUTY</h3>
           <a href="https://gamelead.online/cl/i/l7qxx6" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
@@ -146,6 +182,7 @@
           <img src="https://i.postimg.cc/BvSdqd7J/18d8806e-1a8f-417c-912a-4ef01e66a626.jpg" alt="EA Sports FC" class="game-card-image">
         </div>
         <div class="game-card-content">
+          <h3>EA SPORTS FC</h3>
           <a href="https://gamelead.online/cl/i/7j7lg9" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
@@ -155,6 +192,7 @@
           <img src="https://i.postimg.cc/zvwGssPJ/GTA-V.jpg" alt="GTA 5" class="game-card-image">
         </div>
         <div class="game-card-content">
+          <h3>GTA V</h3>
           <a href="https://gamelead.online/cl/i/34onew" class="cta-btn" target="_blank">Get Fan Pack</a>
         </div>
       </div>
@@ -162,10 +200,9 @@
     </div>
   </main>
 
-  <!-- About -->
   <section class="container">
     <h2>About GameLead</h2>
-    <p style="text-align:center;max-width:800px;margin:0 auto;color:#c9d1d9;">
+    <p style="text-align:center;max-width:800px;margin:0 auto 20px auto;color:#c9d1d9;">
       GameLead is your hub for high-quality gamer content. We provide free fan packs 
       for the most popular games – Fortnite, Minecraft, Roblox, Call of Duty, and more. 
       Every pack includes 4K wallpapers, avatars, logos, and esports-inspired scoreboards, 
@@ -173,7 +210,6 @@
     </p>
   </section>
 
-  <!-- How it Works -->
   <section class="container">
     <h2>How It Works</h2>
     <ol style="max-width:600px;margin:0 auto;color:#c9d1d9;">
@@ -184,7 +220,6 @@
     </ol>
   </section>
 
-  <!-- FAQ -->
   <section class="container">
     <h2>FAQ</h2>
     <div style="max-width:800px;margin:0 auto;color:#c9d1d9;">
@@ -194,7 +229,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 GameLead. All rights reserved.</p>
     <p>
